@@ -1,6 +1,7 @@
 const express = require('express');
 const routes = require('./routes');
-const cors = require('cors')
+const cors = require('cors');
+const serverless  = require('serverless-http')
 
 const corsOptions = {
     origin: '*',
@@ -9,6 +10,6 @@ const corsOptions = {
 
 const app = express();
 app.use(cors(corsOptions))
-app.use(routes)
+app.use('/.netlify/functions/app' , routes)
 
-module.exports  = app;
+module.exports.handler  = serverless(app);

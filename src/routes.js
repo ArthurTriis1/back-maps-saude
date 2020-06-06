@@ -9,6 +9,7 @@ routes.get('/locals', async (req, res) => {
     return res.json(resp.data)
 })
 
+
 routes.get('/local/:local', async (req, res) => {
     const local = req.params.local;
    // console.log(`datastore_search_sql?sql=SELECT * from "d05f6ffa-304b-4a28-bd03-1ffb26cbf866" where tipo_unidade  like '${local}'`)
